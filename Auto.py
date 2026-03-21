@@ -12,14 +12,14 @@ from code_auto import (
 CURRENT_MAY = "1"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-VIDEO_BASE = os.path.join(BASE_DIR, "Videos")
+VIDEO_BASE = r"\\vmware-host\Shared Folders\Auto\Videos\1"
 
 USED_JSON = os.path.join(BASE_DIR, "json", f"used_files_may_{CURRENT_MAY}.json")
 COUNTER_JSON = os.path.join(BASE_DIR, "json", "counter.json")
 ID_FILE = os.path.join(BASE_DIR, "ids.txt")
 
 RUN_HOURS = [6, 9, 13, 15, 18, 21]
-RUN_MINUTE = 25
+RUN_MINUTE = 7
 
 
 # ================= LOAD IDS =================
@@ -86,7 +86,7 @@ while True:
             current_num = counters.get(page_id, 1)
 
             # ===== title =====
-            title = f"Phim Số {current_num}! Tập 1"
+            title = f"Phim Số {current_num}! Tập 01 #reviewphimtongtai #reviewphim #reviewphimhay "
 
             # ===== lấy video =====
             file = get_first_unused_file(VIDEO_BASE)
