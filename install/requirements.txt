@@ -1,0 +1,6 @@
+undetected-chromedriver
+selenium
+pyautogui
+pyperclip
+setuptools
+distlib
