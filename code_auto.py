@@ -8,10 +8,24 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import winreg
 
+def get_chrome_version():
+    try:
+        key = winreg.OpenKey(
+            winreg.HKEY_CURRENT_USER,
+            r"Software\Google\Chrome\BLBeacon"
+        )
+        version, _ = winreg.QueryValueEx(key, "version")
+        return int(version.split(".")[0])
+    except:
+        return None
 
 # ================== SETUP DRIVER ==================
 def setup_driver(i):
+    chrome_version = get_chrome_version()
+    if chrome_version is None:
+        raise Exception("Không tìm thấy Chrome")
     json_file = f"facebook/profile_{i}.json"
     with open(json_file, "r", encoding="utf-8") as file:
         config = json.load(file)
@@ -28,7 +42,7 @@ def setup_driver(i):
 
     driver = uc.Chrome(
         options=options,
-        version_main=146,      # 👈 ÉP CHROMEDRIVER 144
+        version_main=chrome_version - 1,      # 👈 ÉP CHROMEDRIVER 144
         use_subprocess=True
     )
     driver.execute_cdp_cmd("Network.setUserAgentOverride", {"userAgent": user_agent})
