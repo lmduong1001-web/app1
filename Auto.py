@@ -19,7 +19,7 @@ COUNTER_JSON = os.path.join(BASE_DIR, "json", "counter.json")
 ID_FILE = os.path.join(BASE_DIR, "ids.txt")
 
 RUN_HOURS = [6, 9, 13, 15, 18, 21]
-RUN_MINUTE = 7
+RUN_MINUTE = 50
 
 
 # ================= LOAD IDS =================
