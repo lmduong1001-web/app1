@@ -18,8 +18,9 @@ USED_JSON = os.path.join(BASE_DIR, "json", f"used_files_may_{CURRENT_MAY}.json")
 COUNTER_JSON = os.path.join(BASE_DIR, "json", "counter.json")
 ID_FILE = os.path.join(BASE_DIR, "ids.txt")
 
-RUN_HOURS = [6, 9, 13, 15, 18, 21]
-RUN_MINUTE = 50
+#RUN_HOURS = [6, 9, 13, 15, 18, 21]
+RUN_HOURS = [6, 8, 11, 14, 17, 20]
+RUN_MINUTE = 4
 
 
 # ================= LOAD IDS =================

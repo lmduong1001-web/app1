@@ -95,7 +95,7 @@ def upload_tin(driver, tieude, asset_id, video, retry=3):
             if retry > 0:
                 print("🔄 Thử lại upload ảnh...")
                 time.sleep(3)
-                return upload_image(driver, tieude, asset_id, video, retry-1)
+                return upload_tin(driver, tieude, asset_id, video, retry-1)
             return False
 
         ActionChains(driver).move_to_element(input_area).click().send_keys(tieude).perform()
